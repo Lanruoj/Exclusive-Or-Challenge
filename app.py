@@ -3,11 +3,17 @@ def decimal_to_binary(decimal):
     return result
 
 
+def binary_to_decimal(binary):
+    decimal = int(binary, 2)
+    return decimal
+
+
 def exclusive_or(num1, num2):
     bin_list1 = list(decimal_to_binary(num1))
     bin_list2 = list(decimal_to_binary(num2))
     result = []
     i = 0
+
     while len(bin_list1) < len(bin_list2):
         bin_list1 = ["0"] + bin_list1
     while len(bin_list2) < len(bin_list1):
@@ -25,5 +31,7 @@ def exclusive_or(num1, num2):
 
 
 if __name__ == "__main__":
-    bin_list = exclusive_or(3, 20)
-    print(bin_list)
+    binary = exclusive_or(7, 3)
+    result = binary_to_decimal(binary)
+    print(result)
+    
